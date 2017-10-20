@@ -1,6 +1,6 @@
 var boundry;
 
-var hit;
+var end;
 
 window.onload = function(){
 	//$("boundary1").onmouseover = border;
@@ -18,7 +18,19 @@ window.onload = function(){
 			changeBounds();
 		};
 	}
+	ending();
+
 };
+
+var ending = function(){
+	end = document.querySelector("end");
+
+	end.onmouseover = function(){
+		if(boundaries[0].className !== "boundary youlose"){
+			alert("You Win");
+		}
+	}
+}
 
 //var border = function(){
 	//$("boundary1").addClassName("youlose")
