@@ -9,7 +9,10 @@ window.onload = function(){
 
 	var changeBounds = function(){
 		for(var i = 0; i < boundaries.length;i++){
-			boundaries[i].className += "youlose";
+			if(boundaries[i].className = "boundary"){
+				boundaries[i].className += "youlose";
+			}
+			}
 		}
 	}
 
@@ -19,6 +22,18 @@ window.onload = function(){
 		};
 	}
 	ending();
+
+	var start = document.querySelector("#start");
+
+	var restart = function(){
+		for( var i = 0; i < boundaries.length; i++){
+			boundaries[i].className = "boundary";
+		}
+	}
+
+	start.onclick = function(){
+		restart();
+	}
 
 };
 
