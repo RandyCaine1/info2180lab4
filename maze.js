@@ -5,6 +5,7 @@ var end;
 window.onload = function(){
 	//$("boundary1").onmouseover = border;
 	//Exercise 1
+	var maze = document.getElementById("maze");
 	var boundaries = document.querySelectorAll(".boundary");
 
  +	var status = document.querySelector("#status");
@@ -16,7 +17,7 @@ window.onload = function(){
 			}
 			status.innerHTML = "You Lose!";
 			}
-		}
+		};
 	}
 
 	for(var i=0; i < boundaries.length;i++){
@@ -24,6 +25,12 @@ window.onload = function(){
 			changeBounds();
 		};
 	}
+	maze.onmouseleave = function(){
+ +			for (var i = 0; i< otherBoundaries.length-1; i++) {
+ +				otherBoundaries[i].classList.add("youlose");
+ +			}
+ +		};
+ 
 	ending();
 
 	var start = document.querySelector("#start");
@@ -32,11 +39,11 @@ window.onload = function(){
 		for( var i = 0; i < boundaries.length; i++){
 			boundaries[i].className = "boundary";
 		}
-	}
+	};
 
 	start.onclick = function(){
 		restart();
-	}
+	};
 
 
 };
@@ -49,6 +56,7 @@ var ending = function(){
 			status.innerHTML = "You Win!";
 		}
 	}
+
 }
 
 //var border = function(){
