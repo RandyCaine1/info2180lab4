@@ -5,13 +5,16 @@ var end;
 window.onload = function(){
 	//$("boundary1").onmouseover = border;
 	//Exercise 1
-	var boundaries = document.querySelectorAll("");
+	var boundaries = document.querySelectorAll(".boundary");
 
+ +	var status = document.querySelector("#status");
 	var changeBounds = function(){
+
 		for(var i = 0; i < boundaries.length;i++){
 			if(boundaries[i].className = "boundary"){
 				boundaries[i].className += "youlose";
 			}
+			status.innerHTML = "You Lose!";
 			}
 		}
 	}
@@ -35,6 +38,7 @@ window.onload = function(){
 		restart();
 	}
 
+
 };
 
 var ending = function(){
@@ -42,7 +46,7 @@ var ending = function(){
 
 	end.onmouseover = function(){
 		if(boundaries[0].className !== "boundary youlose"){
-			alert("You Win");
+			status.innerHTML = "You Win!";
 		}
 	}
 }
